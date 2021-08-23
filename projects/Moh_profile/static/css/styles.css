@@ -10,6 +10,11 @@ body {
   font-weight: 300;
 }
 
+.container{
+  border:none;
+}
+
+
 .w-100 {
   width: 100%;
   max-width: 100%;
@@ -98,7 +103,10 @@ body {
 
 .nav-link:hover{
     background-color:red;
-    color:#02b875;
+    color:#fff !important;
+    font-weight:bold;
+    border-radius: 35%;
+    transform:scale(10,10,10);
 }
 
 .news {
