@@ -106,7 +106,7 @@ body {
     color:#fff !important;
     font-weight:bold;
     border-radius: 35%;
-    transform:scale(10,10,10);
+    transform:scale(10,20,10);
 }
 
 .news {
@@ -209,7 +209,7 @@ body {
 
 .top {
   position: relative;
-  top: 14rem;
+  top: 10rem;
 }
 
 .covid-19-guide-heading {
