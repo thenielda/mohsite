@@ -1,0 +1,91 @@
+{%extends 'Moh_profile/base.html'%}
+
+{%load static%}
+
+    {%block body%}
+    <div class="container">
+     <section class="row top">
+      <div class="col-md-7">
+         <img src="{% static 'images/moh.jpg'%}" alt="moh" class="moh-img">
+         <div class="moh-header">
+          <h2 class="moh-heading text-center ">Lorem ipsum dolor sit amet.</h2>
+          <h4 class="moh-subheading text-center">Lorem ipsum, dolor sit amet consectetur</h4>
+        </div>
+      </div>
+      
+       <div class="col-md-5">
+        <h2 class="covid-stats-heading text-success">Covid-19 daily stats</h2>
+        <img src="{% static 'images/covid-stats.jpg'%}" alt="covid-stats" class="covid-stats-img">
+       </div>
+     </section>
+
+     <section class="row news">
+       <h4 class="news-heading text-success">Latest health news and events</h4>
+       <div class="col-md-9 news-cards">
+       <div class="col-md-3">
+        <div class="card">
+          <img src="{% static 'images/doctor.jpg'%}" class="card-img-top news-img" alt="news">
+          <div class="card-body">
+            <h5 class="card-title">Lorem, ipsum dolor.</h5>
+            <p class="card-text">Lorem, ipsum dolor sit</p>
+            <a href="#" class="btn btn-outline-success">Read More</a>
+          </div>
+        </div>
+       </div>
+       <div class="col-md-3">
+        <div class="card">
+          <img src="{% static 'images/bp-examination.jpg'%}" class="card-img-top news-img" alt="news">
+          <div class="card-body">
+            <h5 class="card-title">Lorem, ipsum dolor.</h5>
+            <p class="card-text">Lorem, ipsum dolor sit</p>
+            <a href="#" class="btn btn-outline-success">Read More</a>
+          </div>
+        </div>
+       </div>
+       <div class="col-md-3">
+        <div class="card">
+          <img src="{% static 'images/doctor.jpg'%}" class="card-img-top news-img" alt="news">
+          <div class="card-body">
+            <h5 class="card-title">Lorem, ipsum dolor.</h5>
+            <p class="card-text">Lorem, ipsum dolor sit</p>
+            <a href="#" class="btn btn-outline-success">Read More</a>
+          </div>
+        </div>
+       </div>
+       <div class="col-md-3">
+        <div class="card">
+          <img src="{% static 'images/bp-examination.jpg'%}" class="card-img-top news-img" alt="news">
+          <div class="card-body">
+            <h5 class="card-title">Lorem, ipsum dolor.</h5>
+            <p class="card-text">Lorem, ipsum dolor sit</p>
+            <a href="#" class="btn btn-outline-success">Read More</a>
+          </div>
+        </div>
+       </div>
+      </div>
+<!--people column-->
+      <div class="col-md-3">
+        <div class="card">
+          <h2 class="card-header bg-success text-white">
+            Central Hospitals
+          </h2>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a class="item-link">Kamuzu Central Hospital</a></li>
+            <li class="list-group-item"><a class="item-link">Queen Elizabeth Central Hospital</a></li>
+            <li class="list-group-item"><a class="item-link">Mzuzu Central Hospital</a></li>
+            <li class="list-group-item"><a class="item-link">Nkhotakota Central Hospital</a></li>
+          </ul>
+        </div>
+      </div>
+     </section>
+
+     <section class="row">
+       <div class="col-md-12 covid-guide">
+         <div class="col-md-12-inner">
+          <h2 class="covid-19-guide-heading text-success">Covid-19 guidelines for the public</h2>
+          <img src="{% static 'images/covid-guide.jpg'%}" alt="" class="covid-19-img">
+         </div>
+       </div>
+     </section>
+    </div>
+    {%endblock%}

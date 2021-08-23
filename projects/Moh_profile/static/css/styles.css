@@ -1,0 +1,219 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+.w-100 {
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+.navbar-brand {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  width: 100%;
+  height: 40vh;
+  line-height: 3rem;
+}
+
+.mg-logo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+/* 
+.top-header-flag{
+    position:absolute;
+    left:60rem;
+    top:1rem;
+} */
+
+.navbar {
+  position: fixed;
+  padding-bottom: 8rem;
+  z-index: 200;
+  background-color:#fff !important;
+}
+
+.navbar-nav {
+  position: absolute;
+  left: 16rem;
+  top: 3rem;
+  line-height: 3rem;
+  /* text-align:left;
+ align-items:space-between;
+ 
+ display:grid;
+ grid-template-columns: repeat(8,1fr);
+ grid-gap:.6rem; */
+}
+
+.nav-link {
+  color: #02b875 !important;
+  font-size: 1rem;
+}
+
+.malawi-flag {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+
+.top-header {
+  position: absolute;
+}
+
+/* 
+.nav-header{
+    position:relative;
+    margin-top:0;
+    top:-8rem;
+    z-index:200;
+
+} */
+
+.top-header-title {
+  position: relative;
+  top: 6.5rem;
+  left: -1rem;
+  z-index: 300;
+  color: #fff;
+  font-size: 1rem;
+}
+
+
+.nav-link:hover{
+    background-color:red;
+    color:#02b875;
+}
+
+.news {
+  position: relative;
+  top: -20rem;
+}
+
+.moh-img {
+  width: 100%;
+  height: 40vh;
+}
+
+.covid-stats-img {
+  width: 100%;
+  height: 40vh;
+}
+
+.covid-19-img {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  bottom: 2rem;
+  top: 7rem;
+}
+
+.moh-people-img {
+  width: 100%;
+  height: 100%;
+}
+
+.moh-header {
+  position: absolute;
+  bottom: 6rem;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  font-size: bold;
+}
+
+.row {
+  position: relative;
+  top: -5.5rem;
+}
+
+.news-cards {
+  position: relative;
+  left: 0;
+  top: 2rem;
+  display: flex;
+  text-align: center;
+  justify-items: space-between;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 18rem;
+  justify-items: space-between;
+}
+
+.covid-guide {
+  position: relative;
+  text-align: center;
+  align-items: center;
+  top: 13rem;
+  left: 0;
+  margin-bottom: 6rem;
+}
+
+.card-vaccine {
+  position: relative;
+  text-align: center;
+  align-items: center;
+  top: 3rem;
+  padding-left: -12rem;
+}
+
+.card-title,
+.card-text {
+  position: relative;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.news-heading {
+  position: relative;
+  top: 20rem;
+  text-align: center;
+  left: -14rem;
+  font-size: 2rem;
+  color: green;
+  padding: 2rem;
+}
+
+.bg-dark {
+  color: transparent !important;
+}
+
+.top {
+  position: relative;
+  top: 14rem;
+}
+
+.covid-19-guide-heading {
+  position: relative;
+  font-size: 2rem;
+  padding: 2rem;
+  color: green;
+  top: 7rem;
+  left: -14rem;
+}
+
+footer {
+  position: relative;
+  top: 10rem;
+}
