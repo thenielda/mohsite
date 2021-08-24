@@ -102,8 +102,8 @@ body {
 
 
 .nav-link:hover{
-    background-color:red;
-    color:#fff !important;
+    /* background-color:rgb(207, 125, 125); */
+    color:rgb(243, 71, 71) !important;
     font-weight:bold;
     border-radius: 35%;
     transform:scale(10,20,10);
@@ -224,4 +224,11 @@ body {
 footer {
   position: relative;
   top: 10rem;
+}
+
+.mg-email{
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 0.8rem;
+  
 }
