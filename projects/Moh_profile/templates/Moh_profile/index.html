@@ -15,10 +15,38 @@
       
        <div class="col-md-6">
         <h2 class="covid-stats-heading text-success">Covid-19 daily stats</h2>
-        <img src="{% static 'images/covid-stats.jpg'%}" alt="covid-stats" class="covid-stats-img">
-        
+         <img src="{% static 'images/covid-stats.jpg'%}" alt="covid-stats" class="covid-stats-img">
+        <table class="table table-striped container">
+          <thead class="t-head thead-dark ">
+            <th>Current cases</th>
+            <th>Cummulative cases</th>
+            <th>Recovered cases</th>
+            <th>Total Deaths</th>
+            <th>Tests conducted</th>
+            <th>Active cases</th>
+          </thead>
+          <tbody class="t-body">
+            <tr class="table-row">
+              {%for covid19 in covid19_data%}
+                <td class="table-data">{{covid19.new_case}}</td>
+                <td class="table-data">{{covid19.cumulative_confirmed_cases}}</td>
+                <td class="table-data">{{covid19.active_cases}}</td>
+                <td class="table-data">{{covid19.total_recovered}}</td>
+                <td class="table-data">{{covid19.currently_admitted_in_treatment_units}}</td>
+                <td class="table-data">{{covid19.total_tests_conducted}}</td>
+                <td class="table-data">{{covid19.total_deaths}}</td>
+                <td class="table-data">{{covid19.new_discharges_from_treatment_units}}</td>
+                <td class="table-data">{{covid19.new_cases_date}}</td>
+              {%endfor%}
+
+            </tr>
+          </tbody>
+         
+        </table>
        </div>
      </section>
+
+    
 
      <section class="persons container">
        <h2 class="persons-heading">Ministry of health board</h2>
