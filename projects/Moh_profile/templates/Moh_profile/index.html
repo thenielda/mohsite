@@ -16,130 +16,75 @@
        <div class="col-md-6">
         <h2 class="covid-stats-heading text-success">Covid-19 daily stats</h2>
          <img src="{% static 'images/covid-stats.jpg'%}" alt="covid-stats" class="covid-stats-img">
-        <table class="table table-striped container">
-          <thead class="t-head thead-dark ">
-            <th>Current cases</th>
-            <th>Cummulative cases</th>
-            <th>Recovered cases</th>
-            <th>Total Deaths</th>
-            <th>Tests conducted</th>
-            <th>Active cases</th>
-          </thead>
-          <tbody class="t-body">
-            <tr class="table-row">
-              {%for covid19 in covid19_data%}
-                <td class="table-data">{{covid19.new_case}}</td>
-                <td class="table-data">{{covid19.cumulative_confirmed_cases}}</td>
-                <td class="table-data">{{covid19.active_cases}}</td>
-                <td class="table-data">{{covid19.total_recovered}}</td>
-                <td class="table-data">{{covid19.currently_admitted_in_treatment_units}}</td>
-                <td class="table-data">{{covid19.total_tests_conducted}}</td>
-                <td class="table-data">{{covid19.total_deaths}}</td>
-                <td class="table-data">{{covid19.new_discharges_from_treatment_units}}</td>
-                <td class="table-data">{{covid19.new_cases_date}}</td>
-              {%endfor%}
-
-            </tr>
-          </tbody>
-         
-        </table>
+        
        </div>
      </section>
 
-    
+     <table class="table table-striped container">
+      <thead class="t-head thead-dark ">
+        <th>Date</th>
+        <th>New cases</th>
+        <th>Active cases</th>
+        <th>New recovered</th>
+        <th>Currently admitted</th>
+        <th>New Tests conducted</th>
+        <th>New discharges</th>
+        <th>New deaths</th>
+      </thead>
+      <tbody class="t-body">
+        {%for covid19 in covid19_data%}
+        <tr class="table-row">
+            <td class="table-data">{{covid19.date}}</td>
+            <td class="table-data">{{covid19.new_cases}}</td>
+            <td class="table-data">{{covid19.active_cases}}</td>
+            <td class="table-data">{{covid19.new_recovered}}</td>
+            <td class="table-data">{{covid19.currently_admitted}}</td>
+            <td class="table-data">{{covid19.new_tests_conducted}}</td>
+            <td class="table-data">{{covid19.new_discharges}}</td>
+            <td class="table-data">{{covid19.new_deaths}}</td>
+        </tr>
+        {%endfor%}
+      </tbody>
+     
+    </table>
 
      <section class="persons container">
-       <h2 class="persons-heading">Ministry of health board</h2>
-       <div class="row">
-         <div class="col-md-6">
-           <div class="col-md-6">
-            <div class="card person-card border-0">
-              <img src="{% static 'images/minister.jpg'%}" alt="" class="person-img">
-              <h5 class="person-name">Person Name</h5>
-              <h3 class="person-title">Minister of health</h3>
-              <small class="person-qualifications">Person Qualifications</small>
-            </div>
-           </div>
-           <div class="col-md-6">
-            <div class="card border-0">
-              <img src="{% static 'images/deputy-minister.jpg'%}" alt="" class="person-img">
-              <h5 class="person-name">Person Name</h5>
-              <h3 class="person-title">deputy minister of health</h3>
-              <small class="person-qualifications">Person Qualifications</small>
-            </div>
-             
-          </div>
-          
-         </div>
-
-         <div class="col-md-6 persons-section-second">
-          <div class="col-md-6">
-           <div class="card border-0">
-             <img src="{% static 'images/minister.jpg'%}" alt="" class="person-img">
-             <h5 class="person-name">Person Name</h5>
-             <h3 class="person-title">PS of health</h3>
-             <small class="person-qualifications">Person Qualifications</small>
-           </div>
-          </div>
-          <div class="col-md-6">
-           <div class="card border-0">
-             <img src="{% static 'images/deputy-minister.jpg'%}" alt="" class="person-img">
-             <h5 class="person-name">Person Name</h5>
-             <h3 class="person-title">director</h3>
-             <small class="person-qualifications">Person Qualifications</small>
-           </div>
-            
-         </div>
-         
+       <div class="col-md-4">
+        <div class="card">
+          <h2 class="card-header bg-success text-white">
+            Health Priorities
+          </h2>
+          {%for health_priority in health_priorities%}
+          <ul class="list-group list-group-flush">
+            <h5>{{health_priority.disease}}</h5>
+            <h5>{{health_priority.priority}}</h5>
+            <li class="list-group-item"><a class="item-link">{{health_priority.content_url}}</a></li>
+          </ul>
+          {%endfor%}
         </div>
+       </div>
+       <div class="col-md-8">
+
        </div>
      </section>
 
      <section class="row news">
        <h4 class="news-heading text-success">Latest health news and events</h4>
        <div class="col-md-9 news-cards">
+        {%for mohevent in mohevents%}
        <div class="col-md-3">
         <div class="card">
-          <img src="{% static 'images/doctor.jpg'%}" class="card-img-top news-img" alt="news">
+          <img src="{{mohevent.event_image}}" class="card-img-top news-img" alt="news">
           <div class="card-body">
-            <h5 class="card-title">Lorem, ipsum dolor.</h5>
-            <p class="card-text">Lorem, ipsum dolor sit</p>
+            <h5 class="card-title">{{mohevent.event_title}}</h5>
+            <p class="card-text">{{mohevent.event_content}}</p>
+            <p class="card-text">{{mohevent.event_date}}</p>
             <a href="#" class="btn btn-outline-success">Read More</a>
           </div>
         </div>
        </div>
-       <div class="col-md-3">
-        <div class="card">
-          <img src="{% static 'images/bp-examination.jpg'%}" class="card-img-top news-img" alt="news">
-          <div class="card-body">
-            <h5 class="card-title">Lorem, ipsum dolor.</h5>
-            <p class="card-text">Lorem, ipsum dolor sit</p>
-            <a href="#" class="btn btn-outline-success">Read More</a>
-          </div>
-        </div>
-       </div>
-       <div class="col-md-3">
-        <div class="card">
-          <img src="{% static 'images/doctor.jpg'%}" class="card-img-top news-img" alt="news">
-          <div class="card-body">
-            <h5 class="card-title">Lorem, ipsum dolor.</h5>
-            <p class="card-text">Lorem, ipsum dolor sit</p>
-            <a href="#" class="btn btn-outline-success">Read More</a>
-          </div>
-        </div>
-       </div>
-       <div class="col-md-3">
-        <div class="card">
-          <img src="{% static 'images/bp-examination.jpg'%}" class="card-img-top news-img" alt="news">
-          <div class="card-body">
-            <h5 class="card-title">Lorem, ipsum dolor.</h5>
-            <p class="card-text">Lorem, ipsum dolor sit</p>
-            <a href="#" class="btn btn-outline-success">Read More</a>
-          </div>
-        </div>
-       </div>
-      </div>
-<!--people column-->
+       {%endfor%}
+
       <div class="col-md-3">
         <div class="card">
           <h2 class="card-header bg-success text-white">

@@ -20,9 +20,16 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 * {
@@ -35,12 +42,14 @@ body {
   overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
+  background: var(--bs-white);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.container{
-  border:none;
+.container {
+  border: none;
 }
-
 
 .w-100 {
   width: 100%;
@@ -50,8 +59,6 @@ body {
   background-size: cover;
   background-position: center;
 }
-
-
 
 .navbar-brand {
   position: absolute;
@@ -78,12 +85,14 @@ body {
   position: fixed;
   padding-bottom: 8rem;
   z-index: 200;
-  background-color:#fff !important;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: #fff !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.border-0{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+.border-0 {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .navbar-nav {
@@ -132,13 +141,10 @@ body {
   font-size: 1rem;
 }
 
-
-.nav-link:hover{
-    /* background-color:rgb(207, 125, 125); */
-    color:rgb(243, 71, 71) !important;
-    font-weight:bold;
-    border-radius: 35%;
-    transform:scale(10,20,10);
+.nav-link:hover {
+  /* background-color:rgb(207, 125, 125); */
+  color: rgb(243, 71, 71) !important;
+  font-weight: bold;
 }
 
 .news {
@@ -154,6 +160,23 @@ body {
 .covid-stats-img {
   width: 100%;
   height: 40vh;
+}
+
+.mg-email a{
+  color:var(--bs-white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.mg-email:hover{
+  background-color:var(--bs-cyan) !important;
+}
+
+table {
+  position: relative;
+  top: 12rem;
+  text-align: center;
+  justify-content: center;
 }
 
 .covid-19-img {
@@ -239,22 +262,22 @@ body {
   color: transparent !important;
 }
 
-.person-card{
-  width:100%;
-  height:100%;
-  position:relative;
-}
-
-.persons-heading{
-  position:relative;
-  top:12rem;
-  color:#02b875;
-  left:6rem;
-}
-
-.person-section-second{
+.person-card {
+  width: 100%;
+  height: 100%;
   position: relative;
-  left:-4rem;
+}
+
+.persons-heading {
+  position: relative;
+  top: 12rem;
+  color: #02b875;
+  left: 6rem;
+}
+
+.person-section-second {
+  position: relative;
+  left: -4rem;
 }
 
 .top {
@@ -276,9 +299,8 @@ footer {
   top: 10rem;
 }
 
-.mg-email{
+.mg-email {
   color: white !important;
   font-weight: bold !important;
   font-size: 0.8rem;
-  
 }

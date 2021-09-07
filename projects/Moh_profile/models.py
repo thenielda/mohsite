@@ -10,44 +10,45 @@ class Health_Priorities(models.Model):
 
     def __str__(self):
         return str(self.disease)
-        return str(self.priorities)
+        return str(self.priority)
         return str(self.content_url)
+
+        class meta:
+         verbose_name_plural = 'Health_priorities'
 
 
 class Covid19(models.Model):
+    date = models.DateTimeField(auto_now_add=True)
     new_cases = models.IntegerField()
-    cumulative_confirmed_cases = models.IntegerField()
     active_cases = models.IntegerField()
-    total_recovered = models.IntegerField()
-    currently_admitted_in_treatment_units = models.IntegerField()
-    new_discharges_from_treatment_units = models.IntegerField()
-    total_tests_conducted = models.IntegerField()
-    total_deaths = models.IntegerField()
-    new_cases_date = models.DateTimeField(auto_now_add=True)
+    new_recovered = models.IntegerField()
+    currently_admitted = models.IntegerField()
+    new_tests_conducted = models.IntegerField()
+    new_discharges = models.IntegerField()
+    new_deaths = models.IntegerField()
 
     class meta:
         verbose_name_plural = 'Covid19'
 
     def __str__(self):
+        return str(self.date)
         return str(self.new_cases)
-        return str(self.cumulative_confirmed_cases)
         return str(self.active_cases)
-        return str(self.total_recovered)
-        return str(self.currently_admitted_in_treatment_units)
-        return str(self.new_discharges_from_treatment_units)
-        return str(self.total_tests_conducted)
-        return str(self.total_deaths)
-        return str(self.new_cases_date)
+        return str(self.new_recovered)
+        return str(self.currently_admitted)
+        return str(self.new_tests_conducted)
+        return str(self.new_discharges)
+        return str(self.new_deaths)
 
 
 class Mohevents(models.Model):
     event_title = models.CharField(max_length=100)
     event_image = models.ImageField(default='doctor.jpg')
-    Content_url = models.CharField(max_length=300)
+    event_content = models.CharField(max_length=300)
     event_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return str(self.event_title)
         return str(self.event_image)
-        return str(self.content_url)
+        return str(self.event_content)
         return str(self.event_date)

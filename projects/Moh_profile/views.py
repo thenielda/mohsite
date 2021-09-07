@@ -3,22 +3,43 @@ from .models import Covid19, Health_Priorities, Mohevents
 
 # Create your views here.
 def get_index(request):
-    covid19_data = Covid19.objects.all()
-    context = {'covid19_data':covid19_data}
+     covid19_data = Covid19.objects.all()
+     health_priorities = Health_Priorities.objects.all()
+     mohevents = Mohevents.objects.all()
+     context = {'covid19_data':covid19_data,
+                'health_priorities':health_priorities,
+                'mohevents':mohevents}
     
-    return render(request, 'Moh_profile/index.html', context)
+     return render(request, 'Moh_profile/index.html',context)
+
+
+def post_health_priorities(request):
+    if request.method == 'POST':
+        disease = request.POST['disease']
+        priority = request.POST['priority']
+        content_url = request.POST['content_url']
+
+        return render(request, 'Moh_profile/index.html')
 
 def post_covid19_data(request):
     if request.method == 'POST':
+        date = request.POST['date']
         new_cases = request.POST['new_cases']
-        cumulative_confirmed_cases = request.POST['cumulative_confirmed_cases']
         active_cases = request.POST['active_cases']
-        total_recovered = request.POST['total_recovered']
-        currently_admitted_in_treatment_units = request.POST['Currently_admitted_in_treatment_units']
-        new_discharges_from_treatment_units = request.POST['New_discharges_from_treatment_units']
-        total_tests_conducted = request.POST['total_tests_conducted']
-        total_deaths = request.POST['total_deaths']
+        new_recovered = request.POST['new_recovered']
+        currently_admitted = request.POST['Currently_admitted']
+        new_discharges = request.POST['New_discharges']
+        new_deaths = request.POST['new_deaths']
         
+        return render(request, 'Moh_profile/index.html')
+
+def post_mohevents(request):
+    if request.method == 'POST':
+        event_title = request.POST['event_title']
+        event_image = request.POST['event_image']
+        content_url = request.POST['event_content']
+        event_date = request.POST['event_date']
+
         return render(request, 'Moh_profile/index.html')
 
 def about(request):
