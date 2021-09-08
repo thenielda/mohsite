@@ -294,6 +294,11 @@ table {
   left: -14rem;
 }
 
+.form-group{
+  position:relative;
+  top:10rem;
+}
+
 footer {
   position: relative;
   top: 10rem;

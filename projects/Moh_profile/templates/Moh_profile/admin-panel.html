@@ -1,0 +1,14 @@
+{%extends 'Moh_profile/base.html'%}
+
+{%load static%}
+
+{%block title%}MOH admin{%endblock%}
+
+{%block body%}
+  <h1>Covid19 data entry form</h1>
+  <form action="{%url 'index'%}" class="form-group" method="POST">
+      {%csrf_token%}
+      {{form.as_p}}
+      <button type="submit" class="btn btn-success">Send data</button>
+  </form>
+{%endblock%}

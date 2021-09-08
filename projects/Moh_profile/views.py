@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Covid19, Health_Priorities, Mohevents
+from .forms import Covid19form
 
 # Create your views here.
 def get_index(request):
@@ -37,7 +38,7 @@ def post_mohevents(request):
     if request.method == 'POST':
         event_title = request.POST['event_title']
         event_image = request.POST['event_image']
-        content_url = request.POST['event_content']
+        event_content = request.POST['event_content']
         event_date = request.POST['event_date']
 
         return render(request, 'Moh_profile/index.html')
@@ -47,3 +48,24 @@ def about(request):
 
 def events(request):
     return render(request, 'Moh_profile/events.html')
+
+def services(request):
+    return render(request, 'Moh_profile/e-services.html')
+
+def resources(request):
+    return render(request, 'Moh_profile/resources.html')
+
+def vacancies(request):
+    return render(request, 'Moh_profile/vacancies.html')
+
+def complaints(request):
+    return render(request, 'Moh_profile/complaints.html')
+
+def contacts(request):
+    return render(request, 'Moh_profile/contacts.html')
+
+def admin_panel(request):
+    form = Covid19form()
+    if request.method == 'POST':
+        Covid19form(request.POST)
+    return render(request, 'Moh_profile/admin-panel.html', {'form':form})

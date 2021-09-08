@@ -13,15 +13,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only"></span></a>
-                <a class="nav-item nav-link" href="#">About Us</a>
-                <a class="nav-item nav-link" href="#">Events</a>
-                <a class="nav-item nav-link" href="#">e-services</a>
-                <a class="nav-item nav-link" href="#">resources</a>
-                <a class="nav-item nav-link" href="#">vacancies</a>
-                <a class="nav-item nav-link" href="#">complaints</a>
-                <a class="nav-item nav-link" href="#">contacts</a>
-                <a class="nav-item nav-link" href="#"><img src="{% static 'images/malawi-animated.gif'%}" alt="malawi logo" class="malawi-flag"></a>
+                <a class="nav-item nav-link active" href="{%url 'index'%}">Home <span class="sr-only"></span></a>
+                <a class="nav-item nav-link" href="{%url 'about'%}">About Us</a>
+                <a class="nav-item nav-link" href="{%url 'events'%}">Events</a>
+                <a class="nav-item nav-link" href="{%url 'e-services'%}">e-services</a>
+                <a class="nav-item nav-link" href="{%url 'resources'%}">resources</a>
+                <a class="nav-item nav-link" href="{%url 'vacancies'%}">vacancies</a>
+                <a class="nav-item nav-link" href="{%url 'complaints'%}">complaints</a>
+                <a class="nav-item nav-link" href="{%url 'contacts'%}">contacts</a>
+                <a class="nav-item nav-link" href="{%url 'index'%}"><img src="{% static 'images/malawi-animated.gif'%}" alt="malawi logo" class="malawi-flag"></a>
               </div>            
             </div>
              <button class='mg-email btn btn-success pull-right '>
