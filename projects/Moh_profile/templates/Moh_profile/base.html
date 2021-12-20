@@ -1,6 +1,8 @@
-
+{% load tailwind_filters %}
 
 {%load static%}
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,15 +15,19 @@
     <link rel="stylesheet" href="{% static '/css/bootstrap.min.css'%}">
     <link rel="stylesheet" href="{% static '/css/styles.css'%}">
 </head>
-<body class="container">
+<body class="mt-32 container mx-auto text-center">
   {%include 'includes/header.html'%}
   
     {%block body%}
-  
+    
     {%endblock%}
 
-    {%include 'includes/footer.html'%}
+  {%include 'includes/footer.html'%}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.8.0/dist/alpine.js" defer></script>
+
+  <script src="{%static 'js/index.js'%}"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script> -->
 </body>
 </html>

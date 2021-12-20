@@ -1,34 +1,66 @@
-{% load static %}
 
-         <nav class="navbar navbar-expand-lg bg-light container border-0">
-          <section class="top-header">
-            <div class="container">
-                <a class="navbar-brand" href="#"><img src="{% static 'images/mg-logo.png'%}" alt="government logo" class="mg-logo"></a>
-                <h1 class="top-header-title text-success">Ministry of Health Malawi</h1>
-            </div>
-          </section>
-           
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="{%url 'index'%}">Home <span class="sr-only"></span></a>
-                <a class="nav-item nav-link" href="{%url 'about'%}">About Us</a>
-                <a class="nav-item nav-link" href="{%url 'events'%}">Events</a>
-                <a class="nav-item nav-link" href="{%url 'e-services'%}">e-services</a>
-                <a class="nav-item nav-link" href="{%url 'resources'%}">resources</a>
-                <a class="nav-item nav-link" href="{%url 'vacancies'%}">vacancies</a>
-                <a class="nav-item nav-link" href="{%url 'complaints'%}">complaints</a>
-                <a class="nav-item nav-link" href="{%url 'contacts'%}">contacts</a>
-                <a class="nav-item nav-link" href="{%url 'index'%}"><img src="{% static 'images/malawi-animated.gif'%}" alt="malawi logo" class="malawi-flag"></a>
-              </div>            
-            </div>
-             <button class='mg-email btn btn-success pull-right '>
-                <a href="https://mail.gov.mw"><img src="{% static 'images/zimbra_mail.png'%}" alt="Gov Email" class="text-white"> 
-                Gov Email
+{%load static%}
+
+ <nav class="bg-green-400 z-10 mt-0 mb-4 fixed top-0 mx-auto">
+        <div class="container mx-auto text-center flex flex-wrap items-center">
+            <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold">
+                <a class="text-white no-underline hover:text-white hover:no-underline" href="#">
+                    <span class="text-2xl pl-2"><img src="{%static 'images/gov.png'%}" alt="" class="logo w-40 h-30 my-auto mx-auto container"></span>
                 </a>
-          </button>
-          </nav>
-          snsdsdksfsadjkfads 
-  
+                <h1 class="text-4xl text-uppercase text-center container mx-auto my-auto">Ministry of health - malawi</h1>
+                <a class="text-white md:justify-end no-underline hover:text-white hover:no-underline" href="#">
+                  <span class="text-2xl pl-2"><img src="{%static 'images/malawi-animated.gif'%}" alt="" class="logo w-40 h-30 mt-4 my-auto mx-auto container"></span>
+              </a>
+
+            </div>
+           
+        </div>
+        <div class="flex w-full pt-2 content-center container justify-between bg-green-300">
+          <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
+            <li class="mr-3">
+              <a class="inline-block py-2 px-4 text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'index'%}">Home</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'about'%}">About us</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'events'%}">Events</a>
+            </li>
+              <li class="mr-3">
+              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'e-services'%}">E-services</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'resources'%}">Resources</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'vacancies'%}">Vacancies</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'complaints'%}">Complaints</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'dashboards'%}">Dashboards</a>
+            </li>
+          </ul>
+          <button id="dropdownButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Contact <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+
+<!-- Dropdown menu -->
+<div id="dropdown" class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700">
+    <ul class="py-1" aria-labelledby="dropdownButton">
+      <li>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+      </li>
+    </ul>
+</div>
+      </div>
+    </nav>
+

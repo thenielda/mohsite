@@ -1,14 +1,35 @@
 {%extends 'Moh_profile/base.html'%}
 
+{% load tailwind_filters %}
+
 {%load static%}
+
 
 {%block title%}MOH admin{%endblock%}
 
 {%block body%}
-  <h1>Covid19 data entry form</h1>
-  <form action="{%url 'index'%}" class="form-group" method="POST">
+
+<div class="container mt-4 h-full">
+<div class="forms flex gap-4 mt-4">
+  <form action="" class="w-full h-full bg-green-300 text-white p-4 font-medium font-black border-none outline-none mt-32 focus:text-black form-group border-gray-300 ring-1 hover: border-gray-300" method="POST" enctype="multipart/form-data">
+    <h1 class="text-white text-uppercase font-extrabold font-2xl p-4">Covid19 data entry form</h1>
       {%csrf_token%}
-      {{form.as_p}}
-      <button type="submit" class="btn btn-success">Send data</button>
+       {{covid19form | crispy}}
+      <button type="submit" name="send_data" class="bg-green-900 text-white px-4 py-2 font-mediam mt-4">Send data</button>
   </form>
+  <form action="" class="w-full h-full bg-green-300 text-white p-4 font-medium font-black border-none outline-none mt-32 focus:text-black form-group border-gray-300 ring-1 hover: border-gray-300" method="POST" enctype="multipart/form-data">
+    <h1 class="text-white text-uppercase font-extrabold font-2xl p-4">Health Priorities Form</h1>
+      {%csrf_token%}
+       {{health_prioritiesform | crispy}}
+      <button type="submit" name="save_health" class="bg-green-900 text-white px-4 py-2 font-mediam mt-4">Save Health</button>
+  </form>
+  <form action="" class="w-full h-full bg-green-300 text-white p-4 font-medium font-black border-none outline-none mt-32 focus:text-black form-group border-gray-300 ring-1 hover: border-gray-300" method="POST" enctype="multipart/form-data">
+    <h1 class="text-white text-uppercase font-extrabold font-2xl p-4">News and Events Form</h1>
+      {%csrf_token%}
+       {{eventsform | crispy}}
+      <button type="submit" name="save_event" class="bg-green-900 text-white px-4 py-2 font-mediam mt-4">Add Event</button>
+  </form>
+
+</div>
+</div>
 {%endblock%}
