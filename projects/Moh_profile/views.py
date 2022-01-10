@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Covid19, Health_Priorities,Mohevents
-from .forms import Covid19Form,Health_PrioritiesForm,EventsForm
+from .models import Covid19, Health_Priorities,Mohevents,Contact
+from .forms import Covid19Form,Health_PrioritiesForm,EventsForm,ContactForm
 
 
 # Create your views here.
@@ -23,6 +23,7 @@ def post_forms(request):
     covid19form = Covid19Form()
     health_prioritiesform = Health_PrioritiesForm()
     eventsform = EventsForm()
+    contactform = ContactForm()
     if request.method == 'POST':
         if 'send_data' in request.POST:
             covid19form = Covid19Form(request.POST)
@@ -45,6 +46,13 @@ def post_forms(request):
                 eventsform.save()
 
                 return redirect('index')
+
+    elif 'save_message' in request.POST:
+        contactform = ContactForm(request.POST, request.FILES)
+        if contactform.is_valid():
+            contactform.save()
+
+            return redirect('contact')
 
     context = {'covid19form':covid19form, 'health_prioritiesform':health_prioritiesform, 'eventsform':eventsform}
 
@@ -82,7 +90,12 @@ def dashboards(request):
     return render(request, 'Moh_profile/dashboards.html')
 
 
-def contacts(request):
-    return render(request, 'Moh_profile/contacts.html')
+def contact(request):
+    contact = Contact.objects.all()
+    contactform = ContactForm()
+    context = {
+        'contactform':contactform
+    }
+    return render(request, 'Moh_profile/contact.html', context)
 
 

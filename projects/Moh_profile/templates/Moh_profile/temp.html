@@ -1,0 +1,59 @@
+<section class=" w-full p-4 container mx-auto text-center top-0 mb-8">
+        
+    <div class="relative float-left justify-center text-center px-4 py-4 m-2 gap-2 w-full h-full px-16 container mx-auto text-center">
+      {%for event in mohevents%}
+      <div class="news__card card flex border border-green-900">
+        <img src="{{event.event_image.url}}" alt="doctors" class="md:w-full">
+        <h5 class="text-green-800 text-2xl text-uppercase">{{event.event_title}}</h5>
+        <p class="text-gray-900 text-sm">
+          {{event.event_content}}
+        </p>
+        <small class="text-gray-900 text-sm">{{event.event_date}}</small>
+        <button class="bg-green-900 text-white border-none outline-none rounded-md px-4 hover:bg-green-800"><a href="{%url 'events'%}" class="text-white">Read more</a></button>
+      </div>
+      {%empty%}
+      <h5 class="text-gray-800 text-2xl text-uppercase">No events or news to show</h5>
+      {%endfor%}
+  
+    </div>
+
+    <aside class=" grid gap-4 w-full h-full relative float-right mb-4">
+
+    <div class="grid-cols-2 mb-4 md:ml-8 border border-green-900 text-center my-auto mx-auto shadow-2xl ">
+      <h5 class="diseases__list--title bg-green-600 text-white py-3 text-uppercase">High Priority diseases</h5>
+      <ul class="diseases__list--items bg-white text-black">
+        <section class="table-section">
+          <table class=" table table-striped w-96 table-auto px-8 ml-auto relative mx-auto" colspan="4">
+            <thead class="bg-green-700 text-center text-white w-full">
+            <tr class="px-8">
+              <th>Priority</th>
+              <th>Disease</th>
+              <th>Content url</th>
+            </tr>
+            </thead>
+            <tbody class="bg-white text-center text-black py-4">
+              {%for health in health_priorities%}
+              <tr class= "">
+                  <td>{{health.priority}}</td>
+                  <td>{{health.disease}}</td>
+                  <td><li><a href="">{{health.content_url}}</a></li></td>
+              </tr>
+              {%endfor%}
+            </tbody>
+          </table>
+      </ul>
+    </div>
+
+  <div class=" hospitals shadow-3xl md:ml-16 border border-green-900 text-center container">
+    <h5 class="bg-green-600 text-white text-uppercase py-3">List of Central Hospitals</h5>
+    <ul class="hospital__list--items bg-white text-black">
+      <li class="hospital__list--item"><a href="" class="hospital__link">Kamuzu Central Hospital</a></li>
+      <li class="hospital__list--item"><a href="" class="hospital__link">Queen Elizabeth Central Hospital</a></li>
+      <li class="hospital__list--item"><a href="" class="hospital__link">Zomba Central Hospital</a></li>
+      <li class="hospital__list--item"><a href="" class="hospital__link">Zomba Mental Hospital</a></li>
+      <li class="hospital__list--item"><a href="" class="hospital__link">Mzuzu Central Hospital</a></li>
+    </ul>
+  </div>
+</aside>
+ 
+</section>

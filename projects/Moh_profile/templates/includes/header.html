@@ -1,66 +1,51 @@
 
 {%load static%}
 
- <nav class="bg-green-400 z-10 mt-0 mb-4 fixed top-0 mx-auto">
-        <div class="container mx-auto text-center flex flex-wrap items-center">
-            <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold">
-                <a class="text-white no-underline hover:text-white hover:no-underline" href="#">
-                    <span class="text-2xl pl-2"><img src="{%static 'images/gov.png'%}" alt="" class="logo w-40 h-30 my-auto mx-auto container"></span>
+ <nav class="bg-green-900 z-10 mt-0 mb-2 fixed top-0">
+        <div class="text-center flex  items-center">
+            <div class="flex w-full md:w-1/2 justify-center mx-auto md:justify-center text-white font-extrabold">
+                <a class="text-white no-underline hover:text-white hover:no-underline" href="{%url 'index'%}">
+                    <span class="text-2xl pl-2 mt-4"><img src="{%static 'images/gov.png'%}" alt="Malawi-logo" class="logo w-40 h-30 my-auto mx-auto container"></span>
                 </a>
-                <h1 class="text-4xl text-uppercase text-center container mx-auto my-auto">Ministry of health - malawi</h1>
-                <a class="text-white md:justify-end no-underline hover:text-white hover:no-underline" href="#">
-                  <span class="text-2xl pl-2"><img src="{%static 'images/malawi-animated.gif'%}" alt="" class="logo w-40 h-30 mt-4 my-auto mx-auto container"></span>
+                <h1 class="text-3xl text-uppercase text-center container mx-auto my-auto">Ministry of health - malawi</h1>
+                <a class="text-white md:justify-end no-underline hover:text-white hover:no-underline" href="{%url 'index'%}">
+                  <span class="text-2xl pl-2"><img src="{%static 'images/malawi-animated.gif'%}" alt="" class="logo w-40 h-30  my-auto mx-auto container"></span>
               </a>
 
             </div>
            
         </div>
-        <div class="flex w-full pt-2 content-center container justify-between bg-green-300">
+        <div class="flex w-full pt-2 content-center px-18 justify-between bg-gray-900">
           <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
             <li class="mr-3">
-              <a class="inline-block py-2 px-4 text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'index'%}">Home</a>
+              <a class="inline-block py-2 px-4 text-white no-underline hover:text-white py-2 px-3" href="{%url 'index'%}">Home</a>
             </li>
             <li class="mr-3">
-              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'about'%}">About us</a>
+              <a class="inline-block text-white no-underline hover:text-white py-2 px-3" href="{%url 'about'%}">About us</a>
             </li>
             <li class="mr-3">
-              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'events'%}">Events</a>
+              <a class="inline-block text-white no-underline hover: text-white py-2 px-3" href="{%url 'events'%}">Events</a>
             </li>
               <li class="mr-3">
-              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'e-services'%}">E-services</a>
+              <a class="inline-block text-white no-underline hover:text-white py-2 px-3" href="{%url 'e-services'%}">E-services</a>
             </li>
             <li class="mr-3">
-              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'resources'%}">Resources</a>
+              <a class="inline-block text-white no-underline hover:text-white py-2 px-3" href="{%url 'resources'%}">Resources</a>
             </li>
             <li class="mr-3">
-              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'vacancies'%}">Vacancies</a>
+              <a class="inline-block text-white no-underline hover:text-white py-2 px-3" href="{%url 'vacancies'%}">Vacancies</a>
             </li>
             <li class="mr-3">
-              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'complaints'%}">Complaints</a>
+              <a class="inline-block text-white no-underline hover:text-white py-2 px-3" href="{%url 'complaints'%}">Complaints</a>
             </li>
             <li class="mr-3">
-              <a class="inline-block text-gray-900 no-underline hover:text-white py-2 px-4" href="{%url 'dashboards'%}">Dashboards</a>
+              <a class="inline-block text-white no-underline hover:text-white py-2 px-3" href="{%url 'dashboards'%}">Dashboards</a>
+            </li>
+              <li class="mr-3">
+              <a class="inline-block text-white no-underline hover:text-white py-2 px-3" href="{%url 'contact'%}">Contact</a>
             </li>
           </ul>
-          <button id="dropdownButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Contact <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+        </div>
 
-<!-- Dropdown menu -->
-<div id="dropdown" class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700">
-    <ul class="py-1" aria-labelledby="dropdownButton">
-      <li>
-        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-      </li>
-    </ul>
-</div>
-      </div>
     </nav>
 

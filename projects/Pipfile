@@ -10,6 +10,8 @@ psycopg2-binary = "*"
 pillow = "*"
 crispy-tailwind = "*"
 django-crispy-forms = "*"
+sqlparse = "*"
+django-google-maps = "*"
 
 [dev-packages]
 autopep8 = "*"

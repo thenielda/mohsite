@@ -1,0 +1,34 @@
+*{
+    padding:0;
+    margin:0; 
+    box-sizing:border-box;
+
+}
+
+aside{
+    position:absolute;
+    width:100%;
+}
+
+aside.hospitals{
+    position:relative;
+    width:100%;
+}
+
+.event__card{
+    position:relative;
+    width:100%;
+    height:fit-content;
+}
+
+.event__content{
+    position:relative;
+    width:100%;
+    height:fit-content;
+}
+
+.events{
+    position:relative;
+    width:100%;
+    height:50%;
+}
