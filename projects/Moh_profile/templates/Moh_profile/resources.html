@@ -2,8 +2,24 @@
 
 {%load static%}
 
-{%block title%}About Ministry of Health{%endblock%}
+{%block title%}About Ministry of Health | Resources{%endblock%}
 
-{%block body%}
-  <h1>this is the about page</h1>
-{%endblock%}
+
+
+        {%block body%}
+           {%for document in documents%}
+              <div class="event__card card border-none mt-16 shadow-2xl w-full h-full mx-auto my-auto bg-gray-900">
+                <img src="{{document.document_image.url}}" alt="document" class="md:w-full h-full object-fit">
+                <h5 class="text-gray-900 text-2xl text-uppercase font-extrabold">{{document.document_title}}</h5>
+                <a href="{{document.document_url.url}}", class="event__content text-black text-sm p-4">
+                  href="{{document.document_url}}"
+                </a>
+                  <p class="text-black">Published:<small class="text-black text-sm">{{document.document_published_date}}</small></p>
+                <button class="bg-gray-900 text-white  border-none  outline-none w-64 text-center px-5 py-2 mx-auto m-2 rounded-lg  hover:bg-gray-800"><a href="{%url 'resources'%}" class="text-white font-bold">Upload File</a></button>
+              </div>
+              {%empty%}
+              <h5 class="text-gray-800 text-2xl text-uppercase">No Documents to show</h5>
+              {%endfor%}
+          
+   
+             {%endblock%}

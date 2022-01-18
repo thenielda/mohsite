@@ -87,12 +87,17 @@ class Documents(models.Model):
         default='doctor.jpg', upload_to='static/images')
     document_url = models.FileField(upload_to='static/images')
     document_published_date = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        db_table = 'documents'
 
     def __str__(self):
         return str(self.document_title)
         return str(self.document_image)
         return str(self.document_url)
         return str(self.document_published_date)
+
+    class meta:
+        verbose_name_plural = 'documents'
 
 class Contact(models.Model):
     name = models.CharField(max_length=500,blank=False, null=True)

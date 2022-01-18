@@ -2,18 +2,18 @@
 
 {%load static%}
 
-{%block title%}About Ministry of Health| contact{%endblock%}
+{%block title%}Ministry of Health| contact{%endblock%}
 
 {% load tailwind_filters %}
 
 {%block body%}
-  <div class="container mt-4 h-full">
-<div class="forms flex gap-4 mt-4">
-  <form action="" class="w-full h-full bg-green-300 text-white p-4 font-medium font-black border-none outline-none mt-32 focus:text-black form-group border-gray-300 ring-1 hover: border-gray-300" method="POST" enctype="multipart/form-data">
-    <h1 class="text-white text-uppercase font-extrabold font-2xl p-4">Contact Ministry of Health</h1>
+  <div class="container w-1/2 h-1/2">
+<div class="forms">
+  <form action="" class=" bg-gray-900 form-group w-full h-full text-white p-4 font-medium font-black border-none outline-none mt-64 focus:text-black form-group border-gray-300 ring-1 hover: border-gray-300" method="POST" enctype="multipart/form-data">
+    <h1 class="text-white text-uppercase font-extrabold font-4xl p-4">Contact Ministry of Health</h1>
       {%csrf_token%}
        {{contactform | crispy}}
-      <button type="submit" name="send_message" class="bg-green-900 text-white px-4 py-2 font-mediam mt-4">Send Message</button>
+      <button type="submit" name="send_message" class="bg-green-900 text-white px-4 py-2 font-bold rounded-xl mt-4">Send Message</button>
   </form>
 </div>
 </div>

@@ -5,5 +5,18 @@
 {%block title%}About Ministry of Health{%endblock%}
 
 {%block body%}
-  <h1>this is the about page</h1>
+<div class="row cards container">
+  <div class="col-md-6 card bg-white mt-16 w-1/2 h-1/2">
+    <img class="w-full object-fit" src="{% static 'images/new-born.jpg'%}" alt="vacancy">
+    <h2 class="text-gray-900 text-6xl font-extrabold text-center text-uppercase">vacancy title</h2>
+    <p class="content text-gray-500 text-left lineheight-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae illo voluptates soluta. Minima aspernatur, quas ab perspiciatis reprehenderit qui modi iure, beatae ratione corrupti doloribus vitae! Sunt quae quis asperiores.</p>
+    <small class="muted">- posted by ministry of health</small>
+  </div>
+  <div class="col-md-6 card bg-white mt-16 w-1/2 h-1/2">
+    <img class="w-full object-fit" src="{% static 'images/new-born.jpg'%}" alt="vacancy">
+    <h2 class="text-gray-900 text-6xl font-extrabold text-center text-uppercase">vacancy title</h2>
+    <p class="content text-gray-500 text-left lineheight-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae illo voluptates soluta. Minima aspernatur, quas ab perspiciatis reprehenderit qui modi iure, beatae ratione corrupti doloribus vitae! Sunt quae quis asperiores.</p>
+    <small class="muted text-center text-bold text-capitalize">- posted by ministry of health</small>
+  </div>
+</div>
 {%endblock%}

@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Covid19, Health_Priorities,Mohevents,Contact
-from .forms import Covid19Form,Health_PrioritiesForm,EventsForm,ContactForm
-
+from .models import Covid19, Health_Priorities,Mohevents,Contact,Documents
+from .forms import Covid19Form,Health_PrioritiesForm,EventsForm,ContactForm,DocumentsForm
 
 # Create your views here.
 
@@ -24,6 +23,7 @@ def post_forms(request):
     health_prioritiesform = Health_PrioritiesForm()
     eventsform = EventsForm()
     contactform = ContactForm()
+    documentsform = DocumentsForm()
     if request.method == 'POST':
         if 'send_data' in request.POST:
             covid19form = Covid19Form(request.POST)
@@ -54,7 +54,14 @@ def post_forms(request):
 
             return redirect('contact')
 
-    context = {'covid19form':covid19form, 'health_prioritiesform':health_prioritiesform, 'eventsform':eventsform}
+    elif 'save_document' in request.POST:
+        documentsform = DocumentsForm(request.POST, request.FILES)
+        if documentsform.is_valid():
+            documentsform.save()
+
+            return redirect('resources')
+
+    context = {'covid19form':covid19form, 'health_prioritiesform':health_prioritiesform, 'eventsform':eventsform,'contactform':contactform,'documentsform':documentsform}
 
     return render(request, 'Moh_profile/admin-panel.html', context)
 
@@ -76,7 +83,12 @@ def services(request):
 
 
 def resources(request):
-    return render(request, 'Moh_profile/resources.html')
+    documents = Documents.objects.all()
+    documentsform = DocumentsForm()
+    context = {
+        'documentsform':documentsform
+    }
+    return render(request, 'Moh_profile/resources.html', context)
 
 
 def vacancies(request):
@@ -93,9 +105,8 @@ def dashboards(request):
 def contact(request):
     contact = Contact.objects.all()
     contactform = ContactForm()
-    context = {
-        'contactform':contactform
-    }
+    context = {'contactform':contactform}
     return render(request, 'Moh_profile/contact.html', context)
+
 
 

@@ -8,28 +8,16 @@
 {%block title%}MOH admin{%endblock%}
 
 {%block body%}
-
-<div class="container mt-4 h-full">
-<div class="forms flex gap-4 mt-4">
-  <form action="" class="w-full h-full bg-green-300 text-white p-4 font-medium font-black border-none outline-none mt-32 focus:text-black form-group border-gray-300 ring-1 hover: border-gray-300" method="POST" enctype="multipart/form-data">
-    <h1 class="text-white text-uppercase font-extrabold font-2xl p-4">Covid19 data entry form</h1>
-      {%csrf_token%}
-       {{covid19form | crispy}}
-      <button type="submit" name="send_data" class="bg-green-900 text-white px-4 py-2 font-mediam mt-4">Send data</button>
-  </form>
-  <form action="" class="w-full h-full bg-green-300 text-white p-4 font-medium font-black border-none outline-none mt-32 focus:text-black form-group border-gray-300 ring-1 hover: border-gray-300" method="POST" enctype="multipart/form-data">
-    <h1 class="text-white text-uppercase font-extrabold font-2xl p-4">Health Priorities Form</h1>
-      {%csrf_token%}
-       {{health_prioritiesform | crispy}}
-      <button type="submit" name="save_health" class="bg-green-900 text-white px-4 py-2 font-mediam mt-4">Save Health</button>
-  </form>
-  <form action="" class="w-full h-full bg-green-300 text-white p-4 font-medium font-black border-none outline-none mt-32 focus:text-black form-group border-gray-300 ring-1 hover: border-gray-300" method="POST" enctype="multipart/form-data">
-    <h1 class="text-white text-uppercase font-extrabold font-2xl p-4">News and Events Form</h1>
-      {%csrf_token%}
-       {{eventsform | crispy}}
-      <button type="submit" name="save_event" class="bg-green-900 text-white px-4 py-2 font-mediam mt-4">Add Event</button>
-  </form>
-
+<div class="w-full h-full mt-0 py-6">
+  <h1 class="text-gray-900 text-4xl mt-16 mx-auto font-extrabold text-capitalize">Choose a form bellow</h1>
+  <div class="tabs w-full h-full mt-16 relative mx-auto">
+    <button class="open-modal bg-green-500 px-6 py-2 relative cursor-pointer border border-bottom-white text-white text-2xl font-bold rounded-sm hover:bg-green-700 border border-gray-900 ">Covid19 Data Form</button>
+    <button class="open-modal bg-green-500 px-6 py-2 relative cursor-pointer border border-bottom-white text-white text-2xl font-bold rounded-sm hover:bg-green-700">Health Events Form</button>
+    <button class="open-modal bg-green-500 px-6 py-2 relative cursor-pointer border border-bottom-white text-white text-2xl font-bold rounded-sm hover:bg-green-700">Documents Form</button>
+    <button class="open-modal bg-green-500 px-6 py-2 relative cursor-pointer border border-bottom-white text-white text-2xl font-bold rounded-sm hover:bg-green-700">Health Priorities form</button>
+  </div>
 </div>
-</div>
+<!--forms start here-->
+
+
 {%endblock%}

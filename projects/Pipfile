@@ -12,6 +12,7 @@ crispy-tailwind = "*"
 django-crispy-forms = "*"
 sqlparse = "*"
 django-google-maps = "*"
+django-rest-framework = "*"
 
 [dev-packages]
 autopep8 = "*"

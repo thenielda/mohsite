@@ -1,5 +1,5 @@
 from django import forms
-from Moh_profile.models import Covid19, Health_Priorities, Mohevents,Contact
+from .models import Covid19, Health_Priorities, Mohevents,Contact,Documents
 
 
 class Covid19Form(forms.ModelForm):
@@ -26,4 +26,9 @@ class EventsForm(forms.ModelForm):
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
+        fields = '__all__'
+
+class DocumentsForm(forms.ModelForm):
+    class Meta:
+        model = Documents
         fields = '__all__'
